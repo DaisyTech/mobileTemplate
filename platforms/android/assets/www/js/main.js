@@ -1,4 +1,4 @@
-require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all'], function(util) {
+require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore-min', 'backbone-min'], function(util) {
     $("#menu-left").mmenu({
     	// position: "right",
     	dragOpen: true,
