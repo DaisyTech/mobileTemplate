@@ -1,6 +1,6 @@
 var App = App || {};
 
-App.imageAdList = Backbone.Collection.extend({
+App.ImageAdList = Backbone.Collection.extend({
 	model: App.ImageAd,
 	url: '/api/imageAdList'
 });

@@ -8,7 +8,8 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore-min'
             fixed: true
          },
     	// classes : "mm-light",
-    	slidingSubmenus : false
+    	slidingSubmenus : false,
+    	listClass: "menuCatListView"
 	});
 
 	$("#menu-left").trigger("toggle");

@@ -1,6 +1,6 @@
 require([
-    'models/imageAd',
-    'collections/imageAdList',
-    'views/imageAdList'], function(util) {
+    'models/menuCat',
+    'collections/menuCatList',
+    'views/menuCatList'], function(util) {
     
 });
