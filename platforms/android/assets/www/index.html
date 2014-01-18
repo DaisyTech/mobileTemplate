@@ -20,9 +20,12 @@
            }
         </style>
         <script id="menuCatTemplate" type="text/template">
-            <p>Hello</p>
-            alert('menuCatTemplate');
-            // <p><%= data[0].title %></p>  
+            <a href="#"><%= title %></a>
+            <ul class="mm-list mm-panel" id="mm-m0-p2">
+                <li><a href="#">First sub-sub-item</a></li>
+                <li><a href="#">Second sub-sub-item</a></li>
+                <li><a href="#">Third sub-sub-item</a></li>
+            </ul>
         </script>
     </head>
     <body>
@@ -56,7 +59,7 @@
 
                 <!-- left menu bar -->
                 <nav id="menu-left">
-                    <ul class="menuCatListView">
+                    <ul id="menuCatListView">
 <!--                         <li id="test"><a href="#">Introduction</a></li>
                         <li>
                             <a href="#">Second sub-item</a>
