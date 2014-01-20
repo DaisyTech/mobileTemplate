@@ -3,5 +3,4 @@ require([
     'collections/menuCatList',
     'views/menuCat',
     'views/menuCatList'], function(util) {
-    
 });
