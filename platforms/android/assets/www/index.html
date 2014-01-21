@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" media="all" href="css/jquery.mmenu.all.css">
+        <link rel="stylesheet" type="text/css" media="all" href="css/index.css">
 
         <title>Main Screen</title>
         <script data-main="js/main" src="js/require.js"></script>
@@ -20,13 +21,23 @@
            }
         </style>
         <script id="menuCatTemplate" type="text/template">
-            <a class="mm-subopen" href=<%= "#" + id %>></a>
+            <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href=<%="#MenuCat" + id%>>
+                    <h4 class="panel-title">
+                        <%= title %>
+                    </h4>
+                </div>
+                <div id=<%="MenuCat" + id%> class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="mm-list" id=<%= "menuListView" + id %>>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </script>
+
+        <script id="menuTemplate" type="text/template">
             <a href="#"><%= title %></a>
-            <ul class="mm-list mm-panel" id=<%= id %>>
-                <li><a href="#">First sub-sub-item</a></li>
-                <li><a href="#">Second sub-sub-item</a></li>
-                <li><a href="#">Third sub-sub-item</a></li>
-            </ul>
         </script>
     </head>
     <body>
@@ -41,43 +52,15 @@
                 
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="navbar-header" >
-                        <a class="navbar-brand" tyle="float: left;" href="#menu-left">Menu</a>
+                        <a class="navbar-brand" tyle="float: left;" href="#menu-left"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span></button></a>
                         <span class="navbar-brand" style="float: right;">DasiyTech</span>
                     </div>
                 </nav>
-<!-- 
-                <nav class="navbar navbar-default" role="navigation">
-                  <div class="navbar-header">
-                    <a class="navbar-brand navbar-right" href="#">DasiyTech</a>
-                    <div class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <a class="navbar-left" href="#menu-left">Menu</a>
-                    </div>
-                  </div>
-
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  </div>
-                </nav> -->
 
                 <!-- left menu bar -->
                 <nav id="menu-left">
-                    <ul id="menuCatListView">
-                        <!-- <li id="test"><a href="#">Introduction</a></li> -->
-                        <li>
-                            <a href="#">Second sub-item</a>
-                            <ul class="mm-list mm-panel" id="mm-m0-p2">
-                                <li><a href="#">First sub-sub-item</a></li>
-                                <li><a href="#">Second sub-sub-item</a></li>
-                                <li><a href="#">Third sub-sub-item</a></li>
-                            </ul>
-                        </li>
-<!--                         <li><a href="vertical-submenus.html">Vertical submenus example</a></li>
-                        <li><a href="photos.html">Photos in sliding panels</a></li>
-                        <li><a href="positions.html">Positioning the menu</a></li>
-                        <li><a href="colors.html">Coloring the menu</a></li>
-                        <li><a href="advanced.html">Advanced example</a></li>
-                        <li><a href="onepage.html">One page scrolling example</a></li>
-                        <li><a href="jqmobile/index.html">jQuery Mobile example</a></li> -->
-                    </ul>
+                    <div id="menuCatListView">
+                    </div>
                 </nav>
 
                 <div id='main-content'>

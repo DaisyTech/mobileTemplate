@@ -16,8 +16,8 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'b
             fixed: true
          },
     	classes : "mm-light",
-    	slidingSubmenus : false,
-    	listClass: "menuCatListView"
+    	slidingSubmenus : false
+    	// listClass: "menuCatListView"
 	});
 
 	// Backbone.sync = function(method, model, options) {
@@ -33,6 +33,8 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'b
 	$("#menu-left").trigger("toggle");
 
 	//loading json data from server to build ImageAd list
+
+	// loading json data form server to build main Category list
 	$.ajax({
 	  	type:"get",
 	  	url:baseAPIUrl + 'menuCategories',
@@ -50,8 +52,14 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'b
 		}
 	});
 
-	// loading json data form server to build main Category list
-
 	// loading json data from server to build sub menu
+	$.ajax({
+	  	type:"get",
+	  	url:baseAPIUrl + 'menus',
+	  	success:function(json){
+			// save as localStorage
+			localStorage.setItem('menus', JSON.stringify(json));
+		}
+	});
 
 });

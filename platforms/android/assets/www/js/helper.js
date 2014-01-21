@@ -7,10 +7,15 @@
 // 	        return Backbone.ajaxSync.apply(this, arguments);
 // 	    }
 // 	}
-	
+
 require([
     'models/menuCat',
     'collections/menuCatList',
     'views/menuCat',
-    'views/menuCatList'], function(util) {
+    'views/menuCatList',
+    'models/menu',
+    'collections/menuList',
+    'views/menu',
+    'views/menuList',
+    ], function(util) {
 });
