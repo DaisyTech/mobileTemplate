@@ -1,4 +1,12 @@
-require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore-min', 'backbone-min', 'store+json2.min', 'backbone.localStorage-min', 'setting', 'helper'], function(util) {
+require.config({
+    paths: {
+        jquery: 'jquery.min',
+        underscore: "underscore",
+        backbone: "backbone",
+        localStorage: "backbone.localStorage"
+    }
+});
+require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'backbone', 'store+json2.min', 'backbone.localStorage', 'setting', 'helper'], function(util) {
     $("#menu-left").mmenu({
     	// position: "right",
     	dragOpen: true,
@@ -12,15 +20,15 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore-min'
     	listClass: "menuCatListView"
 	});
 
-	Backbone.sync = function(method, model, options) {
-	    if(true) {  // if offline use local storage
-	    	alert("sync!");
-	        return Backbone.loaclSync.apply(this, arguments);
-	    }
-	    else { // otherwise use REST
-	        return Backbone.ajaxSync.apply(this, arguments);
-	    }
-	}
+	// Backbone.sync = function(method, model, options) {
+	//     if(true) {  // if offline use local storage
+	//     	alert("sync!");
+	//         return Backbone.loaclSync.apply(this, arguments);
+	//     }
+	//     else { // otherwise use REST
+	//         return Backbone.ajaxSync.apply(this, arguments);
+	//     }
+	// }
 
 	$("#menu-left").trigger("toggle");
 
@@ -36,7 +44,8 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore-min'
 			// });
 
 			// save as localStorage
-			localStorage.setItem('menuCategories', json);
+			//localStorage.setItem('menuCategories', json);
+			localStorage.setItem('menuCategories', JSON.stringify(json));
 			// console.log(localStorage.getItem("menuCategories"));
 		}
 	});

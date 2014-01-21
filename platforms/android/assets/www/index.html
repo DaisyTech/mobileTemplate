@@ -20,8 +20,9 @@
            }
         </style>
         <script id="menuCatTemplate" type="text/template">
+            <a class="mm-subopen" href=<%= "#" + id %>></a>
             <a href="#"><%= title %></a>
-            <ul class="mm-list mm-panel" id="mm-m0-p2">
+            <ul class="mm-list mm-panel" id=<%= id %>>
                 <li><a href="#">First sub-sub-item</a></li>
                 <li><a href="#">Second sub-sub-item</a></li>
                 <li><a href="#">Third sub-sub-item</a></li>
@@ -60,7 +61,7 @@
                 <!-- left menu bar -->
                 <nav id="menu-left">
                     <ul id="menuCatListView">
-<!--                         <li id="test"><a href="#">Introduction</a></li>
+                        <!-- <li id="test"><a href="#">Introduction</a></li> -->
                         <li>
                             <a href="#">Second sub-item</a>
                             <ul class="mm-list mm-panel" id="mm-m0-p2">
@@ -69,7 +70,7 @@
                                 <li><a href="#">Third sub-sub-item</a></li>
                             </ul>
                         </li>
-                        <li><a href="vertical-submenus.html">Vertical submenus example</a></li>
+<!--                         <li><a href="vertical-submenus.html">Vertical submenus example</a></li>
                         <li><a href="photos.html">Photos in sliding panels</a></li>
                         <li><a href="positions.html">Positioning the menu</a></li>
                         <li><a href="colors.html">Coloring the menu</a></li>
