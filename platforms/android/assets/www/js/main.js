@@ -1,3 +1,4 @@
+var App = App || {};
 require.config({
     paths: {
         jquery: 'jquery.min',
@@ -7,7 +8,7 @@ require.config({
     }
 });
 require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'backbone', 'store+json2.min', 'backbone.localStorage', 'setting', 'helper'], function(util) {
-    $("#menu-left").mmenu({
+	$("#menu-left").mmenu({
     	// position: "right",
     	dragOpen: true,
     	header      : true,
@@ -19,18 +20,6 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'b
     	slidingSubmenus : false
     	// listClass: "menuCatListView"
 	});
-
-	// Backbone.sync = function(method, model, options) {
-	//     if(true) {  // if offline use local storage
-	//     	alert("sync!");
-	//         return Backbone.loaclSync.apply(this, arguments);
-	//     }
-	//     else { // otherwise use REST
-	//         return Backbone.ajaxSync.apply(this, arguments);
-	//     }
-	// }
-
-	$("#menu-left").trigger("toggle");
 
 	//loading json data from server to build ImageAd list
 
@@ -61,5 +50,4 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'b
 			localStorage.setItem('menus', JSON.stringify(json));
 		}
 	});
-
 });

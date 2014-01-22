@@ -1,6 +1,5 @@
 var App = App || {};
 var menusCatsJSON = JSON.parse(localStorage.getItem('menuCategories'));
-
 App.MenuListView = Backbone.View.extend({
 	// el: $( '#menuListView'+ ),
 
@@ -16,7 +15,6 @@ App.MenuListView = Backbone.View.extend({
 			me.collection.add(e);
 		});
 
-
 		// loading collection from REST api
 		// this.collection.fetch({reset : true});
 		this.render();
@@ -31,6 +29,7 @@ App.MenuListView = Backbone.View.extend({
 	},
 
 	// render menus by rendering each menu in its collection
+	// render menus under according menuCat where menu.menu_cat_id == menuCat.id
 	render: function() {
 		var me = this;
 		$.each(menusCatsJSON, function(l, e){

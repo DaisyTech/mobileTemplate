@@ -37,7 +37,13 @@
         </script>
 
         <script id="menuTemplate" type="text/template">
-            <a href="#"><%= title %></a>
+            <a href="#" id=<%= "menu" + id %>><%= title %></a>
+        </script>
+
+        <script id="menuContentTemplate" type="text/template">
+            <h3><%= title %></h3>
+            <hr>
+            <p><%= description %></p>
         </script>
     </head>
     <body>
