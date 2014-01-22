@@ -7,7 +7,7 @@ require.config({
         localStorage: "backbone.localStorage"
     }
 });
-require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'backbone', 'store+json2.min', 'backbone.localStorage', 'setting', 'helper'], function(util) {
+require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'backbone', 'store+json2.min', 'backbone.localStorage', 'hammer.min', 'setting', 'helper'], function(util) {
 	$("#menu-left").mmenu({
     	// position: "right",
     	dragOpen: true,

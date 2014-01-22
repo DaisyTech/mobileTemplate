@@ -38,8 +38,42 @@ require([
 
 		$("#menu-left").trigger("toggle");
 
-		// close that when click the sub menu item
+		// swipe event, open sidebar menu
+		// $('#main-content').hammer().on("swipeleft", function(event) {
+	 //    	event.gesture.preventDefault();
+	 //    	alert("left");
+		// 	$("#menu-left").trigger("open");
+		// });
+
+		// bottom navbar events
+		$('.bottomNavItem').on('click', function(){
+			$.each($('.bottomNavItem'), function(l, e){
+				$(e).css({
+					'background-color':'#5BC0D5',
+					'-webkit-box-shadow': 'none',
+					'box-shadow': 'none'
+				});
+			});
+			$(this).css({
+				'background-color':'#39b3d7',
+				'-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
+				'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
+			});
+		});
+
+		// Sub menu item events
 		$('.menuContainer').on('click', function(){
+			$.each($('.menuContainer'), function(l, e){
+				$(e).css({
+					'-webkit-box-shadow': 'none',
+					'box-shadow': 'none'
+				});
+			});
+			$(this).css({
+				'-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
+				'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
+			});
+
 			$("#menu-left").trigger("close");
 
 			var menuid = $(this).children(":first").attr('id');
@@ -47,6 +81,22 @@ require([
 		 	console.log('menuid: ' + id);
 		 	
 		 	render(contentView, collection, id);
+		});
+
+		// menuCat events
+		$('.panel-heading').on('click', function(){
+			if($(this).attr('class') == 'panel-heading') {
+				$(this).css({
+					'-webkit-box-shadow': 'none',
+					'box-shadow': 'none'
+				});
+			} else {
+				$(this).css({
+					'-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
+					'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
+				});
+			}
+
 		});
 
 		var render = function(contentView, collection, id) {

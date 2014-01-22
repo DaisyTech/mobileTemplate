@@ -1,3 +1,36 @@
+html, body {
+height: 100%;
+}
+
+#content {
+height: 100%;
+position:relative;
+}
+
+body {
+background-color: #f7f5fa;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+overflow: hidden;
+}
+
+.scroll, .scroll-y, .scroll-x {
+    -webkit-overflow-scrolling: touch;
+}
+.scroll > *, .scroll-y > *, .scroll-x > * {
+    -webkit-transform : translateZ(0);
+}
+.scroll { overflow: auto; }
+.scroll-y { overflow-y: auto; }
+.scroll-x { overflow-x: auto; }
+
+.navbar-brand {
+float: left;
+padding: 10px 15px 10px 15px;
+font-size: 23px;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+line-height: 2;
+}
+
 .mm-menu > .mm-panel {
 background: inherit;
 -webkit-overflow-scrolling: touch;
@@ -19,18 +52,136 @@ margin-top: 0px;
 
 .panel {
 margin-bottom: 0px;
-background-color: #fff;
-border: 1px solid transparent;
+/*background-color: #2C3E50;*/
+border: 1px solid #f8f8f8;
 border-bottom: none;
 border-radius: 4px;
 -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
 box-shadow: 0 1px 1px rgba(0,0,0,0.05);
 }
 
+.menuCat-penal {
+background: rgba(0, 0, 0, 0.1);
+color: rgba(0, 0, 0, 0.6);
+}
+
 .panel-body {
 padding: 0px;
+background-color: transparent;
+opacity:0.8;
 }
 
 .mm-menu .mm-list {
 padding: 0;
 }
+
+.mm-title {
+background: none;
+border: none;
+font-size: 23px;
+font-weight: 300;
+margin: 0;
+padding: 0;
+text-indent: 0;
+-webkit-box-shadow: none;
+box-shadow: none;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+line-height: 1.1;
+color: inherit;
+}
+
+.menuContainer {
+background-color: transparent; 
+}
+
+#menu-left {
+background: url("http://st.gdefon.com/wallpapers_original/wallpapers/285496_uzor_krasivyj_fon_krasotishha_1920x1200_(www.GdeFon.ru).jpg");
+/*background-color: #f7f7f9;*/
+}
+
+.panel-heading {
+padding: 10px 15px;
+border-top: 1px solid transparent;
+border-bottom: none;
+border-top-right-radius: 3px;
+border-top-left-radius: 3px;
+}
+
+#main-content {
+background-color: #f7f5fa;
+color: #716b7a;
+padding: 0px 10px 10px 10px;
+padding-bottom: 60px;
+/*padding-top: 65px;*/
+}
+
+/* main-content*/
+.menuImage > img{
+height: 300px;
+}
+
+.bs-callout {
+margin: 20px 0;
+padding: 10px 20px 10px 25px;
+border-left: 3px solid #eee;
+}
+
+.bs-callout-danger {
+background-color: #fdf7f7;
+border-color: #eed3d7;
+}
+
+.bs-callout-danger h4 {
+color: #b94a48;
+}
+
+.bs-callout h4 {
+margin-top: 0;
+margin-bottom: 5px;
+}
+
+h4, .h4 {
+font-size: 18px;
+}
+
+.bs-callout-info {
+background-color: #f4f8fa;
+border-color: #bce8f1;
+}
+
+.bs-callout-info h3 {
+color: #34789a;
+}
+
+
+/* bottom nav bar */
+.row {
+padding: 0 15px;
+}
+
+.col-xs-4 {
+background-color: #ccc;
+}
+
+.bottomNavBar nav{
+	min-height: 40px;
+}
+
+.bottomNav {
+
+}
+.bottomNavItem {
+	border-right: 1px solid #46b8da;
+	min-height: 40px;
+	text-align: center;
+	padding-top: 10px;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	font-weight: 100;
+	color: #fff;
+	background-color: #5bc0de;
+}
+
+.bottomNavItem:last-child {
+	border-right: none;
+};

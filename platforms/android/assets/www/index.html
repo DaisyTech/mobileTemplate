@@ -15,14 +15,9 @@
         <script data-main="js/main" src="js/require.js"></script>
      <!--    <script type="text/javascript" src="cordova.js"></script> -->
 
-        <style type="text/css">
-           #menu-left {
-              /*background-color: #c6c6c6;*/
-           }
-        </style>
         <script id="menuCatTemplate" type="text/template">
-            <div class="panel panel-default">
-                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href=<%="#MenuCat" + id%>>
+            <div class="panel menuCat-penal">
+                <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href=<%="#MenuCat" + id%>>
                     <h4 class="panel-title">
                         <%= title %>
                     </h4>
@@ -41,9 +36,21 @@
         </script>
 
         <script id="menuContentTemplate" type="text/template">
-            <h3><%= title %></h3>
+            <div class=menuTtitle>
+                <div class="bs-callout bs-callout-info">
+                    <h3><%= title %></h4>
+                </div>
+            </div>
             <hr>
-            <p><%= description %></p>
+            <div class='menuImage'>
+                <img src=<%= img_urls %> />
+            <hr>
+            <div class='menuDescription'><%= description %></div>
+            <div class='menuPrice'>
+                <div class="bs-callout bs-callout-danger">
+                    <h4><%= "S$ " + price %></h4>
+                </div>
+            </div>
         </script>
     </head>
     <body>
@@ -74,8 +81,14 @@
 
             </div>
 
-            <div id="footer">
-               
+            <div class="bottomNavBar">
+                <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+                    <div class="row bottomNav">
+                      <div class="col-xs-4 bottomNavItem"><span class="glyphicon glyphicon-list-alt"></span> Menu</div>
+                      <div class="col-xs-4 bottomNavItem"><span class="glyphicon glyphicon-shopping-cart"></span> Order</div>
+                      <div class="col-xs-4 bottomNavItem"><span class="glyphicon glyphicon-info-sign"></span> More</div>
+                    </div>    
+                </nav>
             </div>
        </div>
 
