@@ -59,7 +59,15 @@ require([
                 '-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
                 'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
             });
+            if($(this).attr('id') == 'navMenu') {
+            	$('#main-content').html('<h1>THIS IS MENU</h1>');
+            } else if($(this).attr('id') == 'navOrder') {
+            	$('#main-content').html('<h1>THIS IS ORDER</h1>');
+            } else if($(this).attr('id') == 'navMore') {
+            	$('#main-content').html('<h1>THIS IS MORE</h1>');
+            }
         });
+
 
         // Sub menu item events
         $('.menuContainer').on('click', function () {
@@ -97,6 +105,11 @@ require([
                 });
             }
 
+        });
+
+        // Nav logo events
+        $('#navLogo').on('click', function(){
+        	$('#main-content').html('<h1>THIS IS WELCOME</h1>');
         });
 
         var render = function (contentView, collection, id) {
