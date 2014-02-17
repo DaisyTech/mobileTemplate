@@ -8,18 +8,6 @@ require.config({
     }
 });
 require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'backbone', 'store+json2.min', 'backbone.localStorage', 'hammer.min', 'setting', 'helper'], function(util) {
-	$("#menu-left").mmenu({
-    	// position: "right",
-    	dragOpen: true,
-    	header      : true,
-    	searchfield : true,
-    	labels: {
-            fixed: true
-         },
-    	classes : "mm-light",
-    	slidingSubmenus : false
-    	// listClass: "menuCatListView"
-	});
 
 	//loading json data from server to build ImageAd list
 
@@ -48,6 +36,16 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'b
 	  	success:function(json){
 			// save as localStorage
 			localStorage.setItem('menus', JSON.stringify(json));
+		}
+	});
+
+	// loading json data from server to build sub menu
+	$.ajax({
+	  	type:"get",
+	  	url:baseAPIUrl + 'imageAds',
+	  	success:function(json){
+			// save as localStorage
+			localStorage.setItem('imageAds', JSON.stringify(json));
 		}
 	});
 });

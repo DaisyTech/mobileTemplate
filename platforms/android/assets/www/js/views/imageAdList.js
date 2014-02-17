@@ -1,13 +1,22 @@
 var App = App || {};
 
 App.ImageAdListView = Backbone.View.extend({
-	el: $( '#ImageAdListView' ),
+	el: $( '#imageAdListView' ),
 
 	initialize: function() {
+		var me = this;
 		this.collection = new App.ImageAdList();
-		this.collection.fetch({reset : true});
+		// this.collection.fetch({reset : true});
+
+		var imageAdsJSON = JSON.parse(localStorage.getItem('imageAds'));
+		$.each(imageAdsJSON, function(l, e){
+			me.collection.add(e);
+		});
+
 		this.render();
 
+		this.listenTo( this.collection, 'add', this.renderImageAd );
+		this.listenTo( this.collection, 'reset', this.render );
 	},
 
 	events: {
@@ -24,7 +33,7 @@ App.ImageAdListView = Backbone.View.extend({
 	// render a imageAd by creating a imageAdView and appending the
 	// element it renders to the ImageAdListView' element
 	renderImageAd: function( item ) {
-		var imageAdView = new App.imageAdView({
+		var imageAdView = new App.ImageAdView({
 			model: item
 		});
 		this.$el.append( imageAdView.render().el );

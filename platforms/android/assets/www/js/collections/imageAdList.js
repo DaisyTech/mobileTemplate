@@ -2,5 +2,9 @@ var App = App || {};
 
 App.ImageAdList = Backbone.Collection.extend({
 	model: App.ImageAd,
-	url: '/api/imageAdList'
+	localStorage: new Backbone.LocalStorage("imageAds"),
+	url: baseAPIUrl + 'imageAds',
+	comparator: function(item) {
+        return item.get('id');
+    }
 });

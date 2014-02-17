@@ -1,9 +1,10 @@
 var App = App || {};
 
 App.ImageAd = Backbone.Model.extend({
-	defaults: {
-		name: 'Unknown',
-	},
-
-	idAttribute: '_id'
+	
+	id : 'id',
+	owner_id : 'owner_id',
+	url : 'url', 
+	remark : 'remark',
+	type : 'type'
 });

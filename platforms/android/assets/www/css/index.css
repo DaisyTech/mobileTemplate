@@ -95,8 +95,8 @@ background-color: transparent;
 }
 
 #menu-left {
-background: url("http://st.gdefon.com/wallpapers_original/wallpapers/285496_uzor_krasivyj_fon_krasotishha_1920x1200_(www.GdeFon.ru).jpg");
-/*background-color: #f7f7f9;*/
+/*background: url("http://st.gdefon.com/wallpapers_original/wallpapers/285496_uzor_krasivyj_fon_krasotishha_1920x1200_(www.GdeFon.ru).jpg");*/
+background-color: #f7f7f9;
 }
 
 .panel-heading {
@@ -185,3 +185,11 @@ background-color: #ccc;
 .bottomNavItem:last-child {
 	border-right: none;
 };
+
+#imageAdListView >.item > img {
+	display: block;
+	height: 200px;
+	max-width: none;
+	width: 100%;
+	line-height: 1;
+}

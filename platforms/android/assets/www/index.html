@@ -12,6 +12,9 @@
         <link rel="stylesheet" type="text/css" media="all" href="css/index.css">
 
         <title>Main Screen</title>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+         <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script> -->
         <script data-main="js/main" src="js/require.js"></script>
      <!--    <script type="text/javascript" src="cordova.js"></script> -->
 
@@ -52,6 +55,14 @@
                 </div>
             </div>
         </script>
+
+        <script id="imageAdTemplate" type="text/template">
+            <img src=<%= url %> alt=<%= remark %> />
+            <div class="carousel-caption">
+                <h3><%= remark %></h3>
+                <p><%= "Lorem ipsum dolor sit amet, consectetur adipiscing elit." %></p>
+            </div>
+        </script>
     </head>
     <body>
 
@@ -77,6 +88,21 @@
                 </nav>
 
                 <div id='main-content'>
+                    <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
+                      <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>
+                        <li data-target="#carousel-example-captions" data-slide-to="1" class="active"></li>
+                        <li data-target="#carousel-example-captions" data-slide-to="2" class=""></li>
+                      </ol>
+                      <div class="carousel-inner" id="imageAdListView">
+                      </div>
+                      <a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                      </a>
+                      <a class="right carousel-control" href="#carousel-example-captions" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                      </a>
+                    </div>
                 </div>
 
             </div>
