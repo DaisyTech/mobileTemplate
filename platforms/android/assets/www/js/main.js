@@ -39,13 +39,23 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'b
 		}
 	});
 
-	// loading json data from server to build sub menu
+	// loading json data from server to build images ads
 	$.ajax({
 	  	type:"get",
 	  	url:baseAPIUrl + 'imageAds',
 	  	success:function(json){
 			// save as localStorage
 			localStorage.setItem('imageAds', JSON.stringify(json));
+		}
+	});
+
+	// loading json data from server to build feeds list
+	$.ajax({
+	  	type:"get",
+	  	url:baseAPIUrl + 'feeds',
+	  	success:function(json){
+			// save as localStorage
+			localStorage.setItem('feeds', JSON.stringify(json));
 		}
 	});
 });

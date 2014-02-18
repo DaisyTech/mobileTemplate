@@ -14,6 +14,10 @@ require([
     'collections/imageAdList',
     'views/imageAd',
     'views/imageAdList',
+    'models/feed',
+    'collections/feedList',
+    'views/feed',
+    'views/feedList',
     'models/menuCat',
     'collections/menuCatList',
     'views/menuCat',
@@ -101,7 +105,6 @@ require([
 
         });
 
-
         // sub menu 
         var subMenuCollection = new App.MenuList();
         var menusJSON = JSON.parse(localStorage.getItem('menus'));
@@ -114,6 +117,9 @@ require([
         });
 
         var renderSubMenu = function (contentView, subMenuCollection, id) {
+            $('#main-content').css({
+                'padding' : '0px 10px 10px 10px'
+            });
             // get the id of sub menu when click on it
             var menuCollection = new Backbone.Collection(subMenuCollection.where({
                 id: parseInt(id)
@@ -163,6 +169,8 @@ require([
 
         // Nav logo events
         $('#navLogo').on('click', function(){
+            App.ImgAdListView.$el.empty();
+            App.ImgAdListView.remove();
             $('#main-content').html('<div id="carousel-example-captions" class="carousel slide" data-ride="carousel">' +
                       '<ol class="carousel-indicators">' + 
                         '<li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>' + 
@@ -178,30 +186,16 @@ require([
                         '<span class="glyphicon glyphicon-chevron-right"></span>' + 
                       '</a>' + 
                     '</div>');
-
-            // var imageAdCollection = new App.ImageAdList();
-            // var imageAdJSON = JSON.parse(localStorage.getItem('imageAds'));
-            // var imageAdView = new App.ImageAdView();
-
-            // imageAdView.listenTo(imageAdCollection, 'reset', renderAdImage);
-
-            // $.each(imageAdJSON, function (l, e) {
-            //     imageAdCollection.add(e);
-            // });
-
-            // var renderAdImage = function (imageAdView, imageAdCollection) {
-            //     // get the id of sub menu when click on it
-            //     var adCollection = new Backbone.Collection(imageAdCollection);
-
-            //     adCollection.each(function (item) {
-            //         console.log(item);
-            //         imageAdView.render(item);
-            //     }, imageAdView);
-            // };
-
-            var ImageAdListView = new App.ImageAdListView();
-            console.log("ImageAdListView: " + ImageAdListView);  
+            
+            //var ImgAdListView = new App.ImageAdListView();
+            App.ImgAdListView.render();
+            App.ImgAdListView.$el.children().first('div').attr('class', 'item active');
+            $('#imageAdListView div:nth-child(2)').attr('class', 'item active');
+            $('#imageAdListView div').find('div').attr('class', 'carousel-caption');
         });
+        
 
+        // feeds
+        $('.collapse').collapse();
     });
 });

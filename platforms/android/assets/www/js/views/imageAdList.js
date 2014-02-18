@@ -41,5 +41,5 @@ App.ImageAdListView = Backbone.View.extend({
 });
 
 $(function() {
-	var ImageAdListView = new App.ImageAdListView();	
+	App.ImgAdListView = new App.ImageAdListView();	
 })

@@ -95,8 +95,8 @@ background-color: transparent;
 }
 
 #menu-left {
-/*background: url("http://st.gdefon.com/wallpapers_original/wallpapers/285496_uzor_krasivyj_fon_krasotishha_1920x1200_(www.GdeFon.ru).jpg");*/
-background-color: #f7f7f9;
+background: url("http://c3e308.medialib.glogster.com/media/d9/d98ed5ad9aac08f653edff2f429e9540e67917b700f4714b51b7811e6331d93c/background-small.jpg");
+/*background-color: #f7f7f9;*/
 }
 
 .panel-heading {
@@ -110,7 +110,7 @@ border-top-left-radius: 3px;
 #main-content {
 background-color: #f7f5fa;
 color: #716b7a;
-padding: 0px 10px 10px 10px;
+/*padding: 0px 10px 10px 10px;*/
 padding-bottom: 60px;
 /*padding-top: 65px;*/
 }
@@ -155,12 +155,8 @@ color: #34789a;
 
 
 /* bottom nav bar */
-.row {
+.bottomNav {
 padding: 0 15px;
-}
-
-.col-xs-4 {
-background-color: #ccc;
 }
 
 .bottomNavBar nav{
@@ -186,10 +182,117 @@ background-color: #ccc;
 	border-right: none;
 };
 
+/* image ads */
 #imageAdListView >.item > img {
 	display: block;
 	height: 200px;
 	max-width: none;
 	width: 100%;
 	line-height: 1;
+}
+
+#imageAdListView {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	margin-top: -20px;
+	margin-top: -20px;
+}
+
+#carousel-imageAds {
+	margin-bottom: 5px;
+}
+/* feeds */
+
+.thumbnail {
+	display: block;
+	padding: none;
+	margin-bottom: 0;
+	line-height: 1.428571429;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.thumbnail .caption {
+	padding-left: 15px;
+	color: #777;
+}
+
+.thumbnail .caption h4{
+	font-size: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.thumbnail .caption p{
+	font-size: 9px
+}
+
+.feed-content {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 3px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	height: 95px;
+	overflow-y: hidden;
+	padding: 0px 0px 2px 0px;
+	-webkit-box-shadow: 0 2px 2px rgba(151, 149, 149, 0.5);
+	box-shadow: 0 2px 2px rgba(196, 192, 192, 0.5);
+}
+
+.feed {
+	overflow: auto;
+	border: none;
+	padding: 0px 4px 0px 4px;
+}
+
+.feed > .col-xs-4 > img {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin-top: 5px;
+}
+
+.feedsPanel {
+
+}
+
+.feedsPanel .panel-heading {
+padding: 0;
+border-top: 1px solid transparent;
+border-bottom: none;
+border-top-right-radius: 3px;
+border-top-left-radius: 3px;
+}
+
+#feedListView {
+	padding: 0px 0px 0px 0px;
+}
+
+.panel-body-feed {
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.feed .panel {
+	border:none;
+}
+
+.feed-desription-heading {
+	height: 60px;
+	overflow-y: hidden;
 }
