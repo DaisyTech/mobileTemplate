@@ -1,7 +1,7 @@
 var App = App || {};
 var menusCatsJSON = JSON.parse(localStorage.getItem('menuCategories'));
 App.MenuListView = Backbone.View.extend({
-	// el: $( '#menuListView'+ ),
+	el: $( '.mm-list'),
 
 	initialize: function() {
 		var me = this;
@@ -22,10 +22,13 @@ App.MenuListView = Backbone.View.extend({
 		this.listenTo( this.collection, 'add', this.renderMenu );
 		this.listenTo( this.collection, 'reset', this.render );
 
+		// content view initialization
+		this.contentView = new App.ContentView();
+		this.contentView.listenTo(this.collection, 'reset', this.renderSubMenu);
 	},
 
 	events: {
-		
+		'click .menuContainer' : 'changeMenuStyle',
 	},
 
 	// render menus by rendering each menu in its collection
@@ -41,6 +44,8 @@ App.MenuListView = Backbone.View.extend({
 				me.renderMenu( item, me.el );
 			}, me);
 		});
+
+		this.afterRender();
 	},
 
 	// render a menus by creating a menuView and appending the
@@ -51,6 +56,47 @@ App.MenuListView = Backbone.View.extend({
 		});
 		console.log(el);
 		el.append( menuView.render().el );
+	},
+
+	afterRender: function() {
+        
+	},
+
+	changeMenuStyle: function(e) {
+		console.log(e);
+		var target = $(e.target).closest('.menuContainer');
+		$.each($('.menuContainer'), function (l, x) {
+            $(x).css({
+                '-webkit-box-shadow': 'none',
+                'box-shadow': 'none'
+            });
+        });
+        target.css({
+        	'-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
+        	'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
+        });
+
+        $("#menu-left").trigger("close");
+        
+        var menuid = target.children(":first").attr('id');
+        var id = menuid.substring(4, menuid.length);
+
+        this.renderSubMenu(this.contentView, this.collection, id);
+	},
+
+	renderSubMenu: function (contentView, subMenuCollection, id) {
+		$('#main-content').css({
+        	'padding' : '0px 10px 10px 10px'
+		});
+        // get the id of sub menu when click on it
+        var menuCollection = new Backbone.Collection(subMenuCollection.where({
+        	id: parseInt(id)
+		}));
+        console.log(menuCollection.length);
+        menuCollection.each(function (item) {
+        	console.log(item);
+            contentView.renderContent(item);
+		}, contentView);
 	}
 });
 

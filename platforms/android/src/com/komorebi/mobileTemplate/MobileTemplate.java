@@ -19,6 +19,7 @@
 
 package com.komorebi.mobileTemplate;
 
+import android.R;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
@@ -33,8 +34,8 @@ public class MobileTemplate extends CordovaActivity
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html")
         
-        super.setIntegerProperty("splashscreen", R.drawable.splash);
-        super.loadUrl("file:///android_asset/www/index.html", 2000);
+//        super.setIntegerProperty("splashscreen", R.drawable.splash);
+//        super.loadUrl("file:///android_asset/www/index.html", 2000);
     }
 }
 

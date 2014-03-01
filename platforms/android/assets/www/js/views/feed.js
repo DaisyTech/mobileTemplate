@@ -6,7 +6,7 @@ App.FeedView = Backbone.View.extend({
 	template: $('#feedTemplate').html(),
 
 	events: {
-
+		// 'click .feed' : 'feedClick'
 	},
 
 	render: function() {
@@ -19,4 +19,6 @@ App.FeedView = Backbone.View.extend({
 		
 		return this;
 	}
+
+
 });

@@ -26,7 +26,7 @@ App.FeedListView = Backbone.View.extend({
 	},
 
 	events: {
-		
+		'click .feed' : 'feedClick'
 	},
 
 	// render feeds by rendering each Feed in its collection
@@ -35,6 +35,8 @@ App.FeedListView = Backbone.View.extend({
 			console.log(item);
 			this.renderFeed( item );
 		}, this );
+
+		this.afterRender();
 	},
 
 	// render a Feed by creating a feedView and appending the
@@ -44,6 +46,15 @@ App.FeedListView = Backbone.View.extend({
 			model: item
 		});
 		this.$el.append( feedView.render().el );
+	},
+
+	feedClick: function(e) {
+		var parentWidth = $(window).width()/3*2;
+        ($(e.target).closest('.feedsPanel')).find('.panel-body-feed img').css('width', parentWidth);
+	},
+
+	afterRender: function() {
+		$('.collapse').collapse();
 	}
 });
 

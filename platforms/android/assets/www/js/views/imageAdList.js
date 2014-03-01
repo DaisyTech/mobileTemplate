@@ -28,6 +28,8 @@ App.ImageAdListView = Backbone.View.extend({
 		this.collection.each(function( item ) {
 			this.renderImageAd( item );
 		}, this );
+
+		this.afterRender();
 	},
 
 	// render a imageAd by creating a imageAdView and appending the
@@ -37,6 +39,12 @@ App.ImageAdListView = Backbone.View.extend({
 			model: item
 		});
 		this.$el.append( imageAdView.render().el );
+	},
+
+	afterRender: function() {
+		$('.carousel').carousel();
+        $('#imageAdListView div:nth-child(2)').attr('class', 'item active');
+        $('#imageAdListView div').find('div').attr('class', 'carousel-caption');
 	}
 });
 

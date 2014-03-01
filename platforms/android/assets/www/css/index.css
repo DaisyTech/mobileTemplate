@@ -278,7 +278,7 @@ border-top-left-radius: 3px;
 }
 
 .panel-body-feed {
-	padding: 5px;
+	padding: 15px;
 	border-bottom: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
@@ -295,4 +295,13 @@ border-top-left-radius: 3px;
 .feed-desription-heading {
 	height: 60px;
 	overflow-y: hidden;
+}
+
+.feed-desription-body {
+	font-size: 12px;
+	overflow: auto;
+}
+
+.panel-body-feed > img {
+	margin-bottom: 10px;
 }

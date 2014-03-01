@@ -26,7 +26,7 @@ App.MenuCatListView = Backbone.View.extend({
 	},
 
 	events: {
-		
+		'click .panel-heading' : 'changeMenuCatStyle',
 	},
 
 	// render menuCats by rendering each menuCat in its collection
@@ -44,6 +44,21 @@ App.MenuCatListView = Backbone.View.extend({
 			model: item
 		});
 		this.$el.append( menuCatView.render().el );
+	},
+
+	changeMenuCatStyle: function(e) {
+		var target = $(e.target).closest('.panel-heading');
+		if (target.attr('class') == 'panel-heading') {
+            target.css({
+       	        '-webkit-box-shadow': 'none',
+   	            'box-shadow': 'none'
+        	});
+        } else {
+           	target.css({
+       	        '-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
+   	            'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
+            });
+        }
 	}
 });
 

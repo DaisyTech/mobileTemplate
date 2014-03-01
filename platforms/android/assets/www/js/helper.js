@@ -24,11 +24,11 @@ require([
     'views/menuCatList',
     'models/menu',
     'collections/menuList',
+    'views/content',
     'views/menu',
     'views/menuList',
     'models/menuContent',
-    'views/menuContent',
-    'views/content'
+    'views/menuContent'
 ], function (util) {
 
     $(document).ready(function () {
@@ -66,89 +66,6 @@ require([
             }
         });
 
-
-        // Sub menu item events
-        $('.menuContainer').on('click', function () {
-            $.each($('.menuContainer'), function (l, e) {
-                $(e).css({
-                    '-webkit-box-shadow': 'none',
-                    'box-shadow': 'none'
-                });
-            });
-            $(this).css({
-                '-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
-                'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
-            });
-
-            $("#menu-left").trigger("close");
-
-            var menuid = $(this).children(":first").attr('id');
-            var id = menuid.substring(4, menuid.length);
-            console.log('menuid: ' + id);
-
-            renderSubMenu(contentView, subMenuCollection, id);
-        });
-
-        // menuCat events
-        $('.panel-heading').on('click', function () {
-            if ($(this).attr('class') == 'panel-heading') {
-                $(this).css({
-                    '-webkit-box-shadow': 'none',
-                    'box-shadow': 'none'
-                });
-            } else {
-                $(this).css({
-                    '-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
-                    'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
-                });
-            }
-
-        });
-
-        // sub menu 
-        var subMenuCollection = new App.MenuList();
-        var menusJSON = JSON.parse(localStorage.getItem('menus'));
-        var contentView = new App.ContentView();
-
-        contentView.listenTo(subMenuCollection, 'reset', renderSubMenu);
-
-        $.each(menusJSON, function (l, e) {
-            subMenuCollection.add(e);
-        });
-
-        var renderSubMenu = function (contentView, subMenuCollection, id) {
-            $('#main-content').css({
-                'padding' : '0px 10px 10px 10px'
-            });
-            // get the id of sub menu when click on it
-            var menuCollection = new Backbone.Collection(subMenuCollection.where({
-                id: parseInt(id)
-            }));
-            console.log(menuCollection.length);
-            menuCollection.each(function (item) {
-                console.log(item);
-                contentView.renderContent(item);
-            }, contentView);
-        };
-
-
-        // ad images redering
-        // var adImgCollection = new App.ImageAdList();
-        // var adImgsJSON = JSON.parse(localStorage.getItem('imageAds'));
-        // contentView.listenTo(adImgCollection, 'reset', renderAdImage);
-
-        // var renderAdImage = function (contentView, adImgCollection, id) {
-        //     // get the id of sub menu when click on it
-        //     var menuCollection = new Backbone.Collection(collection.where({
-        //         id: parseInt(id)
-        //     }));
-        //     console.log(menuCollection.length);
-        //     menuCollection.each(function (item) {
-        //         console.log(item);
-        //         contentView.renderContent(item);
-        //     }, contentView);
-        // };
-
         $("#menu-left").mmenu({
             // position: "right",
             dragOpen: true,
@@ -161,11 +78,6 @@ require([
             slidingSubmenus : false
             // listClass: "menuCatListView"
         });
-
-        // image ads
-        $('.carousel').carousel();
-        $('#imageAdListView div:nth-child(2)').attr('class', 'item active');
-        $('#imageAdListView div').find('div').attr('class', 'carousel-caption');
 
         // Nav logo events
         $('#navLogo').on('click', function(){
@@ -194,8 +106,5 @@ require([
             $('#imageAdListView div').find('div').attr('class', 'carousel-caption');
         });
         
-
-        // feeds
-        $('.collapse').collapse();
     });
 });

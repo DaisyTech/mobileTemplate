@@ -70,7 +70,7 @@
                     <div class='row feed-content'>
                         <div class="thumbnail feed" data-toggle="collapse" href=<%= "#feed" + id %>>
                             <div class="col-xs-4">
-                                <img data-src="holder.js" alt=<%= "feed" + id %> src=<%= image_url %>>
+                                <img data-src="holder.js" alt=<%= "feed" + id %> src=<%= icon_image_url %>>
                             </div>
                             <div class="caption col-xs-8">
                                 <h4><%= title %></h4>
@@ -81,6 +81,7 @@
                 </div>
                 <div id=<%= "feed" + id %> class="panel-collapse collapse in">
                     <div class="panel-body panel-body-feed">
+                        <img data-src="holder.js" alt=<%= "feed" + id %> src=<%= body_image_url %>>
                         <p class="feed-desription-body"><%= description %></p>
                     </div>
                 </div>
@@ -129,26 +130,6 @@
 
                     <!-- feeds -->
                     <div id="feedListView">
-                        <!-- <div class="panel feedsPanel">
-                            <div class="panel-heading">
-                                <div class='row feeds'>
-                                    <div class="thumbnail feed" data-toggle="collapse" href="#collapseOne">
-                                        <div class="col-xs-4">
-                                            <img data-src="holder.js" alt="feed1" src="http://cdn.shopify.com/s/files/1/0250/3600/products/card.gift-card.jpg?v=1385758749">
-                                        </div>
-                                        <div class="caption col-xs-8">
-                                            <h4>Thumbnail label</h4>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="collapseOne" class="panel-collapse collapse in" style="height: auto;">
-                                <div class="panel-body panel-body-feed">
-                                Fresh crispy salad variations at Marché®, delicious tatar at the Mövenpick restaurant, fine coffee specialties at our airport bars – or would you prefer a home-made gourmet burger at Cindy’s Diner? Let yourself be tempted by the delicious dishes of tried and tested Swiss quality. Discover the world of indulgence at Marché International with the electronic gift card.  It is uncomplicated and valid all over the world. Enjoy!
-                                </div>
-                            </div>
-                        </div> -->
                     </div> 
 
                 </div>
