@@ -58,4 +58,14 @@ require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'b
 			localStorage.setItem('feeds', JSON.stringify(json));
 		}
 	});
+
+	// loading json data from server to build feeds list
+	$.ajax({
+	  	type:"get",
+	  	url:baseAPIUrl + 'bottomNavBarItems',
+	  	success:function(json){
+			// save as localStorage
+			localStorage.setItem('bottomNavBarItems', JSON.stringify(json));
+		}
+	});
 });

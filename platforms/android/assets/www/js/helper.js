@@ -14,6 +14,10 @@ require([
     'collections/imageAdList',
     'views/imageAd',
     'views/imageAdList',
+    'models/bottomNavBarItem',
+    'collections/bottomNavBarItemList',
+    'views/bottomNavBarItem',
+    'views/bottomNavBarItemList',
     'models/feed',
     'collections/feedList',
     'views/feed',
@@ -36,35 +40,11 @@ require([
 
         $("#menu-left").trigger("toggle");
 
-        // swipe event, open sidebar menu
-        // $('#main-content').hammer().on("swipeleft", function(event) {
-        //            event.gesture.preventDefault();
-        //            alert("left");
-        //         $("#menu-left").trigger("open");
-        // });
-
-        // bottom navbar events
-        $('.bottomNavItem').on('click', function () {
-            $.each($('.bottomNavItem'), function (l, e) {
-                $(e).css({
-                    'background-color': '#5BC0D5',
-                    '-webkit-box-shadow': 'none',
-                    'box-shadow': 'none'
-                });
-            });
-            $(this).css({
-                'background-color': '#39b3d7',
-                '-webkit-box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)',
-                'box-shadow': 'inset 0 3px 5px rgba(0,0,0,0.125)'
-            });
-            if($(this).attr('id') == 'navMenu') {
-            	$('#main-content').html('<h1>THIS IS MENU</h1>');
-            } else if($(this).attr('id') == 'navOrder') {
-            	$('#main-content').html('<h1>THIS IS ORDER</h1>');
-            } else if($(this).attr('id') == 'navMore') {
-            	$('#main-content').html('<h1>THIS IS MORE</h1>');
-            }
-        });
+        // feedList
+        $('.collapse').collapse();
+            
+        // imageAdList
+        $('.carousel').carousel();
 
         $("#menu-left").mmenu({
             // position: "right",
@@ -105,6 +85,12 @@ require([
             $('#imageAdListView div:nth-child(2)').attr('class', 'item active');
             $('#imageAdListView div').find('div').attr('class', 'carousel-caption');
         });
+
+    // // imageAdList
+    // $('.carousel').carousel();
+
+    // // feedList
+    // $('.collapse').collapse();
         
     });
 });

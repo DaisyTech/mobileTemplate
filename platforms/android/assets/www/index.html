@@ -87,6 +87,10 @@
                 </div>
             </div>
         </script>
+
+        <script id="bottomNavBarItemTemplate" type="text/template">
+            <p id=<%= "nav" + title %>><span class=<%= icon_class %>></span><%= title %></p>
+        </script>
     </head>
     <body>
 
@@ -136,12 +140,12 @@
 
             </div>
 
-            <div class="bottomNavBar">
+            <div id="bottomNavBar">
                 <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
                     <div class="row bottomNav">
-                      <div class="col-xs-4 bottomNavItem" id="navMenu"><span class="glyphicon glyphicon-list-alt"></span> Menu</div>
+<!--                       <div class="col-xs-4 bottomNavItem" id="navMenu"><span class="glyphicon glyphicon-list-alt"></span> Menu</div>
                       <div class="col-xs-4 bottomNavItem" id="navOrder"><span class="glyphicon glyphicon-shopping-cart"></span> Order</div>
-                      <div class="col-xs-4 bottomNavItem" id="navMore"><span class="glyphicon glyphicon-info-sign"></span> More</div>
+                      <div class="col-xs-4 bottomNavItem" id="navMore"><span class="glyphicon glyphicon-info-sign"></span> More</div> -->
                     </div>    
                 </nav>
             </div>
@@ -149,6 +153,19 @@
 
         <script type="text/javascript">
             app.initialize();
+
+            $("#menu-left").mmenu({
+                // position: "right",
+                dragOpen: true,
+                header      : true,
+                searchfield : true,
+                labels: {
+                    fixed: true
+                 },
+                classes : "mm-light",
+                slidingSubmenus : false
+                // listClass: "menuCatListView"
+            });
         </script>
     </body>
 </html>

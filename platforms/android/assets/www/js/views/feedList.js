@@ -54,7 +54,7 @@ App.FeedListView = Backbone.View.extend({
 	},
 
 	afterRender: function() {
-		$('.collapse').collapse();
+		// $('.collapse').collapse();
 	}
 });
 

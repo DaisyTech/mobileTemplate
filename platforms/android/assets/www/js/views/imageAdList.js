@@ -42,7 +42,7 @@ App.ImageAdListView = Backbone.View.extend({
 	},
 
 	afterRender: function() {
-		$('.carousel').carousel();
+		// $('.carousel').carousel();
         $('#imageAdListView div:nth-child(2)').attr('class', 'item active');
         $('#imageAdListView div').find('div').attr('class', 'carousel-caption');
 	}
