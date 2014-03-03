@@ -54,10 +54,11 @@ App.FeedListView = Backbone.View.extend({
 	},
 
 	afterRender: function() {
-		// $('.collapse').collapse();
+		$('.panel-collapse').attr('class', 'panel-collapse collapse');
+		// localStorage.setItem('indexHTML', $('#main-content').html());
 	}
 });
 
 $(function() {
-	var feedListView = new App.FeedListView();	
+	App.feedListView = new App.FeedListView();	
 })

@@ -86,13 +86,12 @@ App.MenuListView = Backbone.View.extend({
 
 	renderSubMenu: function (contentView, subMenuCollection, id) {
 		$('#main-content').css({
-        	'padding' : '0px 10px 10px 10px'
+        	'padding' : '0px 10px 60px 10px'
 		});
         // get the id of sub menu when click on it
         var menuCollection = new Backbone.Collection(subMenuCollection.where({
         	id: parseInt(id)
 		}));
-        console.log(menuCollection.length);
         menuCollection.each(function (item) {
         	console.log(item);
             contentView.renderContent(item);

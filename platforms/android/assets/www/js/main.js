@@ -9,8 +9,6 @@ require.config({
 });
 require(['jquery.min', 'bootstrap.min', 'jquery.mmenu.min.all', 'underscore', 'backbone', 'store+json2.min', 'backbone.localStorage', 'hammer.min', 'setting', 'helper'], function(util) {
 
-	//loading json data from server to build ImageAd list
-
 	// loading json data form server to build main Category list
 	$.ajax({
 	  	type:"get",

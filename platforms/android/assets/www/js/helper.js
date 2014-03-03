@@ -34,17 +34,11 @@ require([
     'models/menuContent',
     'views/menuContent'
 ], function (util) {
+    event.preventDefault();
 
-    $(document).ready(function () {
         var me = this;
 
         $("#menu-left").trigger("toggle");
-
-        // feedList
-        $('.collapse').collapse();
-            
-        // imageAdList
-        $('.carousel').carousel();
 
         $("#menu-left").mmenu({
             // position: "right",
@@ -61,36 +55,38 @@ require([
 
         // Nav logo events
         $('#navLogo').on('click', function(){
-            App.ImgAdListView.$el.empty();
-            App.ImgAdListView.remove();
-            $('#main-content').html('<div id="carousel-example-captions" class="carousel slide" data-ride="carousel">' +
+            App.imgAdListView.$el.empty();
+            App.feedListView.$el.empty();
+            $('#main-content').html('<div id="carousel-imageAds" class="carousel slide" data-ride="carousel">' +
                       '<ol class="carousel-indicators">' + 
-                        '<li data-target="#carousel-example-captions" data-slide-to="0" class=""></li>' + 
-                        '<li data-target="#carousel-example-captions" data-slide-to="1" class="active"></li>' + 
-                        '<li data-target="#carousel-example-captions" data-slide-to="2" class=""></li>' + 
+                        '<li data-target="#carousel-imageAds" data-slide-to="0" class=""></li>' + 
+                        '<li data-target="#carousel-imageAds" data-slide-to="1" class="active"></li>' + 
+                        '<li data-target="#carousel-imageAds" data-slide-to="2" class=""></li>' + 
                       '</ol>' + 
                       '<div class="carousel-inner" id="imageAdListView">' +
                       '</div>' +
-                      '<a class="left carousel-control" href="#carousel-example-captions" data-slide="prev">' +
+                      '<a class="left carousel-control" href="#carousel-imageAds" data-slide="prev">' +
                         '<span class="glyphicon glyphicon-chevron-left"></span>' + 
                       '</a>' + 
-                      '<a class="right carousel-control" href="#carousel-example-captions" data-slide="next">' + 
+                      '<a class="right carousel-control" href="#carousel-imageAds" data-slide="next">' + 
                         '<span class="glyphicon glyphicon-chevron-right"></span>' + 
                       '</a>' + 
-                    '</div>');
-            
-            //var ImgAdListView = new App.ImageAdListView();
-            App.ImgAdListView.render();
-            App.ImgAdListView.$el.children().first('div').attr('class', 'item active');
+                    '</div>'+
+                    '<div id="feedListView">' +
+                    '</div>' );
+            App.imgAdListView.render();
+            App.feedListView.render();
+            $('#main-content').css({
+                'padding' : '0px 0px 60px 0px'
+            });
+            $('#imageAdListView').append(App.imgAdListView.$el.html());
+            $('#feedListView').append(App.feedListView.$el.html());
             $('#imageAdListView div:nth-child(2)').attr('class', 'item active');
             $('#imageAdListView div').find('div').attr('class', 'carousel-caption');
+            $('.panel-collapse').attr('class', 'panel-collapse collapse');
+            $('.feed').on('click', function() {
+            var parentWidth = $(window).width()/3*2;
+                ($(this).closest('.feedsPanel')).find('.panel-body-feed img').css('width', parentWidth);
+            });
         });
-
-    // // imageAdList
-    // $('.carousel').carousel();
-
-    // // feedList
-    // $('.collapse').collapse();
-        
-    });
 });
