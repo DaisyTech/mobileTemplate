@@ -14,10 +14,6 @@ require([
     'collections/imageAdList',
     'views/imageAd',
     'views/imageAdList',
-    'models/bottomNavBarItem',
-    'collections/bottomNavBarItemList',
-    'views/bottomNavBarItem',
-    'views/bottomNavBarItemList',
     'models/feed',
     'collections/feedList',
     'views/feed',
@@ -32,7 +28,11 @@ require([
     'views/menu',
     'views/menuList',
     'models/menuContent',
-    'views/menuContent'
+    'views/menuContent',
+    'models/bottomNavBarItem',
+    'collections/bottomNavBarItemList',
+    'views/bottomNavBarItem',
+    'views/bottomNavBarItemList',
 ], function (util) {
     event.preventDefault();
 
