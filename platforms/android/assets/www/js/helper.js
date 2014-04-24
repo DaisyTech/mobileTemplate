@@ -34,8 +34,7 @@ require([
     'views/bottomNavBarItem',
     'views/bottomNavBarItemList',
 ], function (util) {
-    event.preventDefault();
-
+        event.preventDefault();
         var me = this;
 
         $("#menu-left").trigger("toggle");

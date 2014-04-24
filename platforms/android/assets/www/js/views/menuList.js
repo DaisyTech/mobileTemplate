@@ -4,6 +4,7 @@ App.MenuListView = Backbone.View.extend({
 	el: $( '.mm-list'),
 
 	initialize: function() {
+		this.setElement($('.mm-list'));
 		var me = this;
 		this.collection = new App.MenuList();
 
@@ -28,7 +29,7 @@ App.MenuListView = Backbone.View.extend({
 	},
 
 	events: {
-		'click .menuContainer' : 'changeMenuStyle',
+		'click .menuContainer' : 'changeMenuStyle'
 	},
 
 	// render menus by rendering each menu in its collection
@@ -63,7 +64,6 @@ App.MenuListView = Backbone.View.extend({
 	},
 
 	changeMenuStyle: function(e) {
-		console.log(e);
 		var target = $(e.target).closest('.menuContainer');
 		$.each($('.menuContainer'), function (l, x) {
             $(x).css({

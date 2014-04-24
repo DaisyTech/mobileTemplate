@@ -10,7 +10,7 @@ position:relative;
 body {
 background-color: #f7f5fa;
 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-overflow: hidden;
+/*overflow: hidden;*/
 }
 
 .scroll, .scroll-y, .scroll-x {
